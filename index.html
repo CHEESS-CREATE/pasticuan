@@ -15,8 +15,8 @@
 </head>
 <body>
 
-    <div class="min-h-screen">
-        <nav class="border-b border-gray-800 bg-[#1e293b]/80 backdrop-blur-md sticky top-0 z-40 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto w-full">
+    <div id="public-landing-view" class="block min-h-screen relative">
+        <nav class="border-b border-gray-800 bg-[#1e293b]/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto w-full">
             <span class="text-xl font-black text-white">SAHAM<span class="text-emerald-400">PRO</span></span>
             <a href="#pricing" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2 rounded-xl text-sm transition">Mulai Sekarang</a>
         </nav>
@@ -37,7 +37,7 @@
                         <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Fundamental Valuation Score</li>
                         <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Akses Grup Komunitas Member</li>
                     </ul>
-                    <button onclick="orderViaWhatsApp('Bulanan', 'Rp 30.000')" class="w-full bg-slate-800 hover:bg-slate-700 py-3 rounded-xl font-bold text-white transition cursor-pointer">Beli Paket</button>
+                    <button onclick="orderViaWhatsApp('Bulanan', 'Rp 30.000')" class="w-full bg-slate-800 hover:bg-slate-700 py-3 rounded-xl font-bold text-white transition">Beli Paket</button>
                 </div>
 
                 <div class="bg-[#1e293b] border-2 border-emerald-500 p-8 rounded-3xl relative hover-lift">
@@ -52,24 +52,73 @@
                         <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Free E-Book "Rahasia Bandar"</li>
                         <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Prioritas Support 24/7</li>
                     </ul>
-                    <button onclick="orderViaWhatsApp('Tahunan', 'Rp 100.000')" class="w-full bg-emerald-600 hover:bg-emerald-500 py-3 rounded-xl font-extrabold text-white transition cursor-pointer">Beli Paket</button>
+                    <button onclick="orderViaWhatsApp('Tahunan', 'Rp 100.000')" class="w-full bg-emerald-600 hover:bg-emerald-500 py-3 rounded-xl font-extrabold text-white transition">Beli Paket</button>
                 </div>
             </div>
         </section>
 
-        <section class="max-w-5xl mx-auto px-6 py-10 pb-20">
+        <section class="max-w-5xl mx-auto px-6 py-10">
             <h2 class="text-xl font-black text-white mb-6 text-center">Apa Kata Member Kami?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-[#1e293b]/30 p-6 rounded-2xl border border-gray-800 italic text-gray-400 text-sm">"Screener-nya sangat membantu saya deteksi akumulasi bandar. Profit saya naik 30% bulan ini!" - Budi, Trader</div>
                 <div class="bg-[#1e293b]/30 p-6 rounded-2xl border border-gray-800 italic text-gray-400 text-sm">"Gak perlu ribet analisa satu-satu, data fundamentalnya sudah sangat akurat." - Sarah, Investor</div>
             </div>
         </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-10">
+            <h2 class="text-xl font-black text-white mb-6 text-center">Pertanyaan Umum (FAQ)</h2>
+            <div class="bg-[#1e293b]/30 p-6 rounded-2xl border border-gray-800 text-sm text-gray-300">
+                <p><b>Q: Apakah data update real-time?</b><br>A: Ya, data kami diperbarui secara otomatis setiap hari bursa.</p><br>
+                <p><b>Q: Bagaimana cara akses setelah beli?</b><br>A: Hubungi admin via WA, akses akan aktif setelah verifikasi transfer.</p>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-10 pb-20">
+            <h2 class="text-xl font-black text-white mb-6">Berita Saham Indonesia</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-[#1e293b]/50 p-4 rounded-xl border border-gray-800 hover:border-emerald-500 transition"><h4 class="text-sm font-bold text-white">IHSG Menguat, Sektor Perbankan Jadi Penopang.</h4></div>
+                <div class="bg-[#1e293b]/50 p-4 rounded-xl border border-gray-800 hover:border-emerald-500 transition"><h4 class="text-sm font-bold text-white">Daftar Saham Blue Chip Dividen Besar.</h4></div>
+            </div>
+        </section>
+
+        <div class="fixed bottom-6 right-6 z-50">
+            <button onclick="switchView('owner')" class="text-slate-700 bg-[#1e293b]/80 px-3 py-1.5 rounded-lg border border-gray-800 text-[10px] font-bold hover:text-emerald-400 transition"><i class="fa-solid fa-lock"></i> Owner Portal</button>
+        </div>
+    </div>
+
+    <div id="owner-dashboard-view" class="hidden flex-col min-h-screen p-6">
+        <div class="max-w-5xl mx-auto w-full">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-black text-white">DASHBOARD OWNER</h2>
+                <button onclick="switchView('public')" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs transition">Keluar</button>
+            </div>
+            <input type="text" id="stockInput" placeholder="Contoh: BBRI..." class="bg-slate-800 text-white p-3 rounded-xl w-full uppercase border border-gray-700 mb-4 focus:border-emerald-500 outline-none">
+            <button onclick="updateDashboardData()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded-xl font-bold w-full transition">Cari</button>
+            <div id="lbl-status-bandar" class="mt-8 p-6 bg-[#1e293b] rounded-3xl border border-gray-700 text-white text-center">Masukkan kode saham untuk data real-time...</div>
+        </div>
     </div>
 
     <script>
+        const OWNER_PIN = "071227";
+        function switchView(target) {
+            if (target === 'owner') {
+                const pin = prompt("PIN Owner:");
+                if (pin === OWNER_PIN) {
+                    document.getElementById('public-landing-view').style.display = 'none';
+                    document.getElementById('owner-dashboard-view').style.display = 'flex';
+                } else { alert("PIN Salah!"); }
+            } else {
+                document.getElementById('public-landing-view').style.display = 'block';
+                document.getElementById('owner-dashboard-view').style.display = 'none';
+            }
+        }
         function orderViaWhatsApp(paket, harga) {
             const pesan = `Halo Admin SAHAMPRO,\n\nSaya ingin berlangganan Paket Premium.\n\n*Detail Order*:\n• Paket: ${paket}\n• Harga: ${harga}\n\nMohon petunjuk transfer pembayarannya.`;
             window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=${encodeURIComponent(pesan)}`, '_blank');
+        }
+        function updateDashboardData() {
+            const ticker = document.getElementById('stockInput').value.toUpperCase();
+            document.getElementById('lbl-status-bandar').innerText = ticker + ": Status Big Accumulation (Data Simulasi)";
         }
     </script>
 </body>
