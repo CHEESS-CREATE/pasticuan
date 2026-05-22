@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <div id="public-landing-view" class="block min-h-screen relative">
+    <div class="min-h-screen relative">
         <nav class="border-b border-gray-800 bg-[#1e293b]/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto w-full">
             <span class="text-xl font-black text-white">SAHAM<span class="text-emerald-400">PRO</span></span>
             <a href="#pricing" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2 rounded-xl text-sm transition">Mulai Sekarang</a>
@@ -80,62 +80,13 @@
                 <div class="bg-[#1e293b]/50 p-4 rounded-xl border border-gray-800 hover:border-emerald-500 transition"><h4 class="text-sm font-bold text-white">Daftar Saham Blue Chip Dividen Besar.</h4></div>
             </div>
         </section>
-
-        <div class="fixed bottom-6 right-6 z-50">
-            <button onclick="switchView('owner')" class="text-slate-700 bg-[#1e293b]/80 px-3 py-1.5 rounded-lg border border-gray-800 text-[10px] font-bold hover:text-emerald-400 transition"><i class="fa-solid fa-lock"></i> Owner Portal</button>
-        </div>
-    </div>
-
-    <div id="owner-dashboard-view" class="hidden flex-col min-h-screen p-6">
-        <div class="max-w-5xl mx-auto w-full">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-xl font-black text-white">DASHBOARD OWNER</h2>
-                <button onclick="switchView('public')" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs transition">Keluar</button>
-            </div>
-            <input type="text" id="stockInput" placeholder="Contoh: BBRI..." class="bg-slate-800 text-white p-3 rounded-xl w-full uppercase border border-gray-700 mb-4 focus:border-emerald-500 outline-none">
-            <button onclick="updateDashboardData()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded-xl font-bold w-full transition">Cari</button>
-            <div id="lbl-status-bandar" class="mt-8 p-6 bg-[#1e293b] rounded-3xl border border-gray-700 text-white text-center">Masukkan kode saham untuk data real-time...</div>
-        </div>
     </div>
 
     <script>
-        const OWNER_PIN = "071227";
-        
-        // Database Analisa yang lebih lengkap
-        const stockDatabase = {
-            "BBRI": { per: "11.2x", pbv: "2.1x", roe: "18.5%", trend: "Strong Bullish", rsi: "65 (Overbought)", status: "Big Accumulation", news: "Dividen interim segera cair." },
-            "BBCA": { per: "24.5x", pbv: "4.8x", roe: "20.2%", trend: "Sideways", rsi: "50 (Neutral)", status: "Normal Accumulation", news: "Kinerja kuartal solid." },
-            "TLKM": { per: "13.8x", pbv: "2.4x", roe: "17.5%", trend: "Bearish", rsi: "35 (Oversold)", status: "Distribution", news: "Restrukturisasi data center." }
-        };
-
-        function updateDashboardData() {
-            const ticker = document.getElementById('stockInput').value.toUpperCase();
-            const resultArea = document.getElementById('lbl-status-bandar');
-            
-            if (stockDatabase[ticker]) {
-                const d = stockDatabase[ticker];
-                resultArea.innerHTML = `
-                    <div class="space-y-4 text-left">
-                        <h3 class="text-emerald-400 font-bold text-xl">${ticker} - Detail Analisa</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-slate-900 p-3 rounded-lg border border-slate-700">PER: <span class="font-bold">${d.per}</span></div>
-                            <div class="bg-slate-900 p-3 rounded-lg border border-slate-700">PBV: <span class="font-bold">${d.pbv}</span></div>
-                            <div class="bg-slate-900 p-3 rounded-lg border border-slate-700">ROE: <span class="font-bold">${d.roe}</span></div>
-                            <div class="bg-slate-900 p-3 rounded-lg border border-slate-700">Trend: <span class="font-bold">${d.trend}</span></div>
-                        </div>
-                        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500">
-                            <p class="text-emerald-400 font-bold">Status Bandar: ${d.status}</p>
-                            <p class="text-xs text-slate-300 mt-2">Update: ${d.news}</p>
-                        </div>
-                    </div>
-                `;
-            } else {
-                resultArea.innerHTML = "Saham tidak ditemukan dalam database premium.";
-            }
+        function orderViaWhatsApp(paket, harga) {
+            const pesan = `Halo Admin SAHAMPRO,\n\nSaya ingin berlangganan Paket Premium.\n\n*Detail Order*:\n• Paket: ${paket}\n• Harga: ${harga}\n\nMohon petunjuk transfer pembayarannya.`;
+            window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=${encodeURIComponent(pesan)}`, '_blank');
         }
-
-        // Fungsi switchView dan orderViaWhatsApp (tetap seperti sebelumnya)
-        // ... (bisa disalin dari kode sebelumnya)
     </script>
 </body>
 </html>
