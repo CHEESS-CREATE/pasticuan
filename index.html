@@ -112,10 +112,13 @@
                 document.getElementById('owner-dashboard-view').style.display = 'none';
             }
         }
+
+        // FUNGSI WA YANG SUDAH DIPERBARUI
         function orderViaWhatsApp(paket, harga) {
-            const pesan = `Halo Admin SAHAMPRO, saya ingin beli ${paket} seharga ${harga}. Mohon petunjuk transfer.`;
+            const pesan = `Halo Admin SAHAMPRO,\n\nSaya ingin berlangganan Paket Premium.\n\n*Detail Order*:\n• Paket: ${paket}\n• Harga: ${harga}\n\nMohon petunjuk transfer pembayarannya.`;
             window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=${encodeURIComponent(pesan)}`, '_blank');
         }
+
         function updateDashboardData() {
             const ticker = document.getElementById('stockInput').value.toUpperCase();
             document.getElementById('lbl-status-bandar').innerText = ticker + ": Status Big Accumulation (Data Simulasi)";
