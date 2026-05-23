@@ -2,78 +2,69 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAHAMPRO | Professional Terminal</title>
+    <title>SAHAMPRO | Premium Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: white; scroll-behavior: smooth; }
+        body { background-color: #020617; color: white; font-family: sans-serif; }
         .glass { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-        .glow { box-shadow: 0 0 25px rgba(16, 185, 129, 0.2); }
     </style>
 </head>
-<body class="p-2 md:p-6">
+<body class="p-4">
 
-    <nav class="glass rounded-2xl p-4 mb-6 flex justify-between items-center max-w-7xl mx-auto">
-        <span class="text-2xl font-black">SAHAM<span class="text-emerald-500">PRO</span></span>
-        <div class="space-x-6 text-sm font-semibold text-gray-400">
-            <a href="#fitur" class="hover:text-white">Fitur</a>
-            <a href="#pricing" class="hover:text-white text-emerald-400">Langganan</a>
-        </div>
-    </nav>
-
-    <div class="h-10 mb-6 overflow-hidden rounded-lg glass max-w-7xl mx-auto">
-        <div class="tradingview-widget-container">
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
-            { "symbols": [ { "proName": "IDX:COMPOSITE" }, { "proName": "IDX:BBCA" }, { "proName": "IDX:BBRI" }, { "proName": "IDX:TLKM" } ], "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true }
-            </script>
-        </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 mb-20">
-        <div class="lg:col-span-3 h-[500px] glass rounded-3xl p-2">
-            <div id="tv_chart" class="h-full w-full"></div>
-        </div>
-        <div class="h-[500px] glass rounded-3xl p-4 overflow-y-auto">
-            <h3 class="font-bold text-emerald-400 mb-4">Market Watch</h3>
-            <div id="tv_market"></div>
-        </div>
-    </div>
-
-    <section class="max-w-4xl mx-auto px-6 py-16">
-        <h2 class="text-3xl font-black text-center mb-12">Kenapa Trader Memilih SAHAMPRO?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass p-6 rounded-2xl text-center"><i class="fa-solid fa-bolt text-emerald-400 text-3xl mb-4"></i><h3 class="font-bold mb-2">Real-Time Data</h3><p class="text-xs text-gray-400">Eksekusi cepat dengan data akurat.</p></div>
-            <div class="glass p-6 rounded-2xl text-center"><i class="fa-solid fa-microchip text-emerald-400 text-3xl mb-4"></i><h3 class="font-bold mb-2">AI Bandarmology</h3><p class="text-xs text-gray-400">Deteksi akumulasi pemain besar otomatis.</p></div>
-            <div class="glass p-6 rounded-2xl text-center"><i class="fa-solid fa-users text-emerald-400 text-3xl mb-4"></i><h3 class="font-bold mb-2">Komunitas VIP</h3><p class="text-xs text-gray-400">Sharing ide trading bersama member ahli.</p></div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-20 bg-slate-900/50">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black mb-12">Pilih Akses Anda</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="glass p-8 rounded-3xl border border-gray-800">
-                    <h3 class="text-xl font-bold">Bulanan</h3>
-                    <div class="text-4xl font-black my-6 text-white">Rp 30.000</div>
-                    <button onclick="orderViaWhatsApp('Bulanan', 'Rp 30.000')" class="w-full bg-slate-700 hover:bg-slate-600 py-4 rounded-xl font-bold">Pilih Paket</button>
-                </div>
-                <div class="glass p-8 rounded-3xl border-2 border-emerald-500 transform md:scale-105">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-black px-3 py-0.5 rounded-full text-[10px] font-black uppercase">Hemat 70%</div>
-                    <h3 class="text-xl font-bold">Tahunan</h3>
-                    <div class="text-4xl font-black my-6 text-white">Rp 100.000</div>
-                    <button onclick="orderViaWhatsApp('Tahunan', 'Rp 100.000')" class="w-full bg-emerald-500 hover:bg-emerald-600 py-4 rounded-xl font-bold text-black">Pilih Paket</button>
-                </div>
+    <div id="landing-page" class="max-w-4xl mx-auto pt-20 text-center">
+        <h1 class="text-5xl font-black mb-6">SAHAM<span class="text-emerald-500">PRO</span> Premium</h1>
+        <p class="text-gray-400 mb-10">Dapatkan akses ke AI Bandarmology, Heatmap Sektor, dan Fundamental Score sekarang juga.</p>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="glass p-8 rounded-3xl">
+                <h3 class="text-xl font-bold">Bulanan</h3>
+                <div class="text-3xl font-black my-4">Rp 30.000</div>
+                <button onclick="order('Bulanan', '30.000')" class="w-full bg-emerald-600 py-3 rounded-xl font-bold">Beli Paket</button>
+            </div>
+            <div class="glass p-8 rounded-3xl border border-emerald-500">
+                <h3 class="text-xl font-bold">Tahunan</h3>
+                <div class="text-3xl font-black my-4">Rp 100.000</div>
+                <button onclick="order('Tahunan', '100.000')" class="w-full bg-emerald-600 py-3 rounded-xl font-bold">Beli Paket</button>
             </div>
         </div>
-    </section>
+        
+        <button onclick="enterOwner()" class="text-[10px] text-gray-700 hover:text-emerald-500">Admin Login</button>
+    </div>
+
+    <div id="premium-dashboard" class="hidden max-w-7xl mx-auto">
+        <div class="glass p-6 rounded-2xl mb-6 flex justify-between">
+            <h2 class="text-2xl font-black">SAHAMPRO Terminal <span class="text-emerald-500 text-sm italic">Member Access</span></h2>
+            <button onclick="location.reload()" class="text-sm text-red-400">Logout</button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="glass p-4 rounded-2xl">Bandarmology Score: <span class="text-emerald-400 font-bold">87/100 (Strong)</span></div>
+            <div class="glass p-4 rounded-2xl">Market Momentum: <span class="text-blue-400 font-bold">Financials Up</span></div>
+            <div class="glass p-4 rounded-2xl">Foreign Buy: <span class="text-emerald-400 font-bold">+$4.5M</span></div>
+        </div>
+        
+        <div id="tv_chart" class="h-[500px] glass rounded-3xl"></div>
+    </div>
 
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-        new TradingView.widget({ "container_id": "tv_chart", "symbol": "IDX:BBCA", "theme": "dark", "autosize": true, "allow_symbol_change": true, "details": true });
-        new TradingView.widget({ "container_id": "tv_market", "width": "100%", "height": "100%", "symbolsGroups": [{"name": "Market", "symbols": [{"name": "IDX:COMPOSITE"}, {"name": "IDX:BBCA"}, {"name": "IDX:BBRI"}]}], "colorTheme": "dark", "isTransparent": true });
-        function orderViaWhatsApp(p, h) { window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=Halo Admin, Saya ingin berlangganan Paket ${p} seharga ${h}. Mohon info pembayarannya.`); }
+    <script>
+        function order(p, h) {
+            window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=Halo Admin, Saya ingin beli paket ${p} seharga ${h}. Mohon info pembayarannya.`);
+        }
+
+        // Fungsi Akses Khusus Owner
+        function enterOwner() {
+            const pass = prompt("Masukkan Password Owner:");
+            if(pass === "123456") { // GANTI PASSWORD ANDA DI SINI
+                document.getElementById('landing-page').style.display = 'none';
+                document.getElementById('premium-dashboard').style.display = 'block';
+                loadChart();
+            } else { alert("Password Salah!"); }
+        }
+
+        function loadChart() {
+            new TradingView.widget({ "container_id": "tv_chart", "symbol": "IDX:BBCA", "theme": "dark", "autosize": true, "details": true });
+        }
     </script>
 </body>
 </html>
