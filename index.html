@@ -3,74 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAHAMPRO - Premium System</title>
+    <title>SAHAMPRO | Professional Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; scroll-behavior: smooth; }
-        .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
-<body>
+<body class="p-2 md:p-6">
 
-    <div class="min-h-screen">
-        <nav class="border-b border-gray-800 bg-[#1e293b]/80 backdrop-blur-md sticky top-0 z-40 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto w-full">
-            <span class="text-xl font-black text-white">SAHAM<span class="text-emerald-400">PRO</span></span>
-            <a href="#pricing" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2 rounded-xl text-sm transition">Mulai Sekarang</a>
-        </nav>
-        
-        <header class="max-w-5xl mx-auto px-6 pt-20 text-center">
-            <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">Ikuti Jejak <span class="text-emerald-400">Big Player</span></h1>
-            <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">Hentikan menebak-nebak harga. Gunakan data fundamental & bandarmologi untuk hasilkan cuan konsisten.</p>
-        </header>
+    <nav class="glass rounded-2xl p-4 mb-6 flex justify-between items-center">
+        <div class="text-2xl font-black">SAHAM<span class="text-emerald-500">PRO</span> <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded uppercase">Terminal</span></div>
+        <div class="text-sm text-gray-400" id="date"></div>
+    </nav>
 
-        <section id="pricing" class="max-w-5xl mx-auto px-6 py-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[#1e293b]/50 border border-gray-800 p-8 rounded-3xl hover-lift">
-                    <h3 class="text-lg font-bold text-white">Paket Bulanan</h3>
-                    <div class="text-3xl font-black text-white my-4">Rp 30.000</div>
-                    <ul class="text-sm text-gray-400 space-y-3 mb-8">
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Real-Time Bandarmology Screener</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Daily Stock Pick (3 Saham/Hari)</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Fundamental Valuation Score</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Akses Grup Komunitas Member</li>
-                    </ul>
-                    <button onclick="orderViaWhatsApp('Bulanan', 'Rp 30.000')" class="w-full bg-slate-800 hover:bg-slate-700 py-3 rounded-xl font-bold text-white transition cursor-pointer">Beli Paket</button>
-                </div>
-
-                <div class="bg-[#1e293b] border-2 border-emerald-500 p-8 rounded-3xl relative hover-lift">
-                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider">Paling Hemat</span>
-                    <h3 class="text-lg font-bold text-white">Paket Tahunan</h3>
-                    <div class="text-3xl font-black text-white my-4">Rp 100.000</div>
-                    <ul class="text-sm text-gray-400 space-y-3 mb-8">
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> <b>Semua Fitur Bulanan +</b></li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Institutional & Foreign Flow Tracker</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Auto-Trading Plan (Entry/TP/SL)</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> 1-on-1 Portfolio Consultation</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Free E-Book "Rahasia Bandar"</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Prioritas Support 24/7</li>
-                    </ul>
-                    <button onclick="orderViaWhatsApp('Tahunan', 'Rp 100.000')" class="w-full bg-emerald-600 hover:bg-emerald-500 py-3 rounded-xl font-extrabold text-white transition cursor-pointer">Beli Paket</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-5xl mx-auto px-6 py-10 pb-20">
-            <h2 class="text-xl font-black text-white mb-6 text-center">Apa Kata Member Kami?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                <div class="bg-[#1e293b]/30 p-6 rounded-2xl border border-gray-800 italic text-gray-400 text-sm">"Screener-nya sangat membantu saya deteksi akumulasi bandar. Profit saya naik 30% bulan ini!" - Budi, Trader</div>
-                <div class="bg-[#1e293b]/30 p-6 rounded-2xl border border-gray-800 italic text-gray-400 text-sm">"Gak perlu ribet analisa satu-satu, data fundamentalnya sudah sangat akurat." - Sarah, Investor</div>
-            </div>
-        </section>
+    <div class="h-10 mb-6 overflow-hidden rounded-lg glass">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
+            { "symbols": [ { "proName": "IDX:COMPOSITE" }, { "proName": "IDX:BBCA" }, { "proName": "IDX:BBRI" }, { "proName": "IDX:TLKM" }, { "proName": "IDX:ASII" } ], "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true }
+            </script>
+        </div>
     </div>
 
-    <script>
-        function orderViaWhatsApp(paket, harga) {
-            const pesan = `Halo Admin SAHAMPRO,\n\nSaya ingin berlangganan Paket Premium.\n\n*Detail Order*:\n• Paket: ${paket}\n• Harga: ${harga}\n\nMohon petunjuk transfer pembayarannya.`;
-            window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=${encodeURIComponent(pesan)}`, '_blank');
-        }
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <div class="lg:col-span-3 h-[550px] glass rounded-3xl p-2">
+            <div id="tv_chart" class="h-full w-full"></div>
+        </div>
+
+        <div class="h-[550px] glass rounded-3xl p-4 overflow-y-auto">
+            <h3 class="font-bold text-emerald-400 mb-4">Market Watch</h3>
+            <div id="tv_market"></div>
+        </div>
+
+        <div class="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-3xl p-6 h-[400px]">
+                <h3 class="font-bold mb-4">Fundamental Snapshot</h3>
+                <div id="tv_fundamental"></div>
+            </div>
+            <div class="glass rounded-3xl p-6 h-[400px]">
+                <h3 class="font-bold mb-4">Market News</h3>
+                <div id="tv_news"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+        // Init Chart
+        new TradingView.widget({ "container_id": "tv_chart", "symbol": "IDX:BBCA", "theme": "dark", "autosize": true, "interval": "D", "allow_symbol_change": true, "details": true });
+        // Init Market
+        new TradingView.widget({ "container_id": "tv_market", "width": "100%", "height": "100%", "symbolsGroups": [{"name": "Market", "symbols": [{"name": "IDX:COMPOSITE"}, {"name": "IDX:BBCA"}, {"name": "IDX:BBRI"}, {"name": "IDX:TLKM"}, {"name": "IDX:ASII"}, {"name": "IDX:CUAN"}]}], "colorTheme": "dark", "isTransparent": true });
+        // Init Fundamental
+        new TradingView.widget({ "container_id": "tv_fundamental", "symbol": "IDX:BBCA", "theme": "dark", "width": "100%", "height": "100%", "isTransparent": true, "displayMode": "regular" });
+        // Init News
+        new TradingView.widget({ "container_id": "tv_news", "feedMode": "market", "market": "stock", "width": "100%", "height": "100%", "colorTheme": "dark", "isTransparent": true });
+        
+        document.getElementById('date').innerText = new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     </script>
 </body>
 </html>
