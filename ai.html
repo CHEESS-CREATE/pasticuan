@@ -1,0 +1,105 @@
+<!-- ========================================= -->
+<!-- FILE: ai.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Market</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#050505;
+color:white;
+font-family:sans-serif;
+padding:20px;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+}
+
+.gold{
+color:#f5c542;
+}
+
+textarea{
+background:#0a0a0a;
+border:1px solid rgba(255,255,255,.08);
+outline:none;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="text-5xl font-black gold">
+ASK AI
+</h1>
+
+<p class="text-white/50 mt-3">
+AI Market Analysis
+</p>
+
+<div class="glass rounded-[40px] p-8 mt-10">
+
+<textarea
+id="question"
+placeholder="Contoh: Apakah BBCA masih bullish?"
+class="w-full h-[150px] rounded-3xl p-5"
+></textarea>
+
+<button
+onclick="askAI()"
+class="bg-yellow-400 text-black px-8 py-5 rounded-2xl font-black mt-6"
+>
+
+ANALYZE MARKET
+
+</button>
+
+<div
+id="answer"
+class="glass rounded-3xl p-6 mt-8 hidden"
+></div>
+
+</div>
+
+<script>
+
+function askAI(){
+
+const q = document.getElementById("question").value;
+
+const answer = document.getElementById("answer");
+
+answer.classList.remove("hidden");
+
+answer.innerHTML = `
+<h2 class="text-2xl font-black gold">
+AI ANALYSIS
+</h2>
+
+<p class="text-white/70 mt-4 leading-relaxed">
+${q} menunjukkan momentum bullish dengan indikasi akumulasi asing meningkat dan volume market di atas rata-rata.
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
