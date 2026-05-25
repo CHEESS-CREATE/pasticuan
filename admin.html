@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#050505;
+color:white;
+font-family:sans-serif;
+padding:20px;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+}
+
+.gold{
+color:#f5c542;
+}
+
+input, textarea{
+background:#0a0a0a;
+border:1px solid rgba(255,255,255,.08);
+outline:none;
+color:white;
+width:100%;
+padding:20px;
+border-radius:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+const adminPass = prompt("ENTER ADMIN PASSWORD");
+
+if(adminPass !== "ADMINSAHAMPRO"){
+
+document.write(`
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+color:white;
+font-size:40px;
+">
+ACCESS DENIED
+</div>
+`);
+
+}
+
+</script>
+
+<h1 class="text-5xl font-black gold">
+ADMIN DASHBOARD
+</h1>
+
+<p class="text-white/50 mt-3">
+Manage VIP Members
+</p>
+
+<div class="grid md:grid-cols-3 gap-5 mt-10">
+
+<div class="glass rounded-3xl p-6">
+
+<p class="text-white/40">
+VIP MEMBERS
+</p>
+
+<h2 class="text-5xl font-black gold mt-4">
+12,493
+</h2>
+
+</div>
+
+<div class="glass rounded-3xl p-6">
+
+<p class="text-white/40">
+TODAY PROFIT
+</p>
+
+<h2 class="text-5xl font-black text-green-400 mt-4">
++8.2%
+</h2>
+
+</div>
+
+<div class="glass rounded-3xl p-6">
+
+<p class="text-white/40">
+SIGNAL WINRATE
+</p>
+
+<h2 class="text-5xl font-black gold mt-4">
+87%
+</h2>
+
+</div>
+
+</div>
+
+<!-- UPLOAD SIGNAL -->
+
+<div class="glass rounded-[40px] p-8 mt-10">
+
+<h2 class="text-3xl font-black gold">
+UPLOAD SIGNAL
+</h2>
+
+<div class="grid md:grid-cols-2 gap-5 mt-8">
+
+<input
+type="text"
+placeholder="Stock Code"
+/>
+
+<input
+type="text"
+placeholder="BUY / SELL"
+/>
+
+<input
+type="text"
+placeholder="Entry Price"
+/>
+
+<input
+type="text"
+placeholder="Take Profit"
+/>
+
+</div>
+
+<textarea
+placeholder="Signal Notes..."
+class="mt-5 h-[180px]"
+></textarea>
+
+<button
+onclick="uploadSignal()"
+class="bg-yellow-400 text-black px-8 py-5 rounded-2xl font-black mt-8"
+>
+
+UPLOAD SIGNAL
+
+</button>
+
+</div>
+
+<!-- SEND NEWS -->
+
+<div class="glass rounded-[40px] p-8 mt-10">
+
+<h2 class="text-3xl font-black gold">
+MARKET NEWS
+</h2>
+
+<input
+type="text"
+placeholder="News Title"
+class="mt-8"
+/>
+
+<textarea
+placeholder="News Content..."
+class="mt-5 h-[180px]"
+></textarea>
+
+<button
+onclick="uploadNews()"
+class="bg-yellow-400 text-black px-8 py-5 rounded-2xl font-black mt-8"
+>
+
+UPLOAD NEWS
+
+</button>
+
+</div>
+
+<script>
+
+function uploadSignal(){
+
+alert("SIGNAL SUCCESSFULLY UPLOADED");
+
+}
+
+function uploadNews(){
+
+alert("NEWS SUCCESSFULLY UPDATED");
+
+}
+
+</script>
+
+</body>
+</html>
