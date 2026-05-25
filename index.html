@@ -1,85 +1,240 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAHAMPRO | Professional Terminal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: white; scroll-behavior: smooth; }
-        .glass { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saham Pro</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#050505;
+color:white;
+font-family:sans-serif;
+overflow-x:hidden;
+}
+
+.gold{
+color:#f5c542;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+}
+
+</style>
+
 </head>
-<body class="p-2 md:p-6">
 
-    <nav class="glass rounded-2xl p-4 mb-6 flex justify-between items-center max-w-7xl mx-auto">
-        <span class="text-2xl font-black">SAHAM<span class="text-emerald-500">PRO</span></span>
-        <div class="space-x-6 text-sm font-semibold text-gray-400">
-            <a href="#fitur" class="hover:text-white">Fitur</a>
-            <a href="#pricing" class="hover:text-white text-emerald-400">Langganan</a>
-        </div>
-    </nav>
+<body>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 mb-20">
-        <div class="lg:col-span-3 h-[550px] glass rounded-3xl p-2">
-            <div id="tv_chart" class="h-full w-full"></div>
-        </div>
-    </div>
+<!-- HERO -->
 
-    <section id="pricing" class="py-10 bg-slate-900/50">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black mb-12">Pilih Akses Anda</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div class="glass p-8 rounded-3xl border border-gray-800 text-left">
-                    <h3 class="text-xl font-bold text-center">Paket Bulanan</h3>
-                    <div class="text-4xl font-black my-6 text-white text-center">Rp 30.000</div>
-                    <ul class="text-sm text-gray-300 space-y-3 mb-8">
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Real-Time Bandarmology</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Daily Stock Pick</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Fundamental Valuation</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Akses Grup Komunitas</li>
-                    </ul>
-                    <button onclick="orderViaWhatsApp('Bulanan', 'Rp 30.000')" class="w-full bg-slate-700 hover:bg-slate-600 py-4 rounded-xl font-bold text-center">Pilih Paket</button>
-                </div>
-                <div class="glass p-8 rounded-3xl border-2 border-emerald-500 transform md:scale-105 text-left relative">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-black px-3 py-0.5 rounded-full text-[10px] font-black uppercase">Hemat 70%</div>
-                    <h3 class="text-xl font-bold text-center">Paket Tahunan</h3>
-                    <div class="text-4xl font-black my-6 text-white text-center">Rp 100.000</div>
-                    <ul class="text-sm text-gray-300 space-y-3 mb-8">
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> <b>Semua Fitur Bulanan +</b></li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Foreign Flow Tracker</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Auto-Trading Plan</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> 1-on-1 Consultation</li>
-                        <li><i class="fa-solid fa-star text-emerald-400 mr-2"></i> Free E-Book "Rahasia Bandar"</li>
-                    </ul>
-                    <button onclick="orderViaWhatsApp('Tahunan', 'Rp 100.000')" class="w-full bg-emerald-500 hover:bg-emerald-600 py-4 rounded-xl font-bold text-black text-center">Pilih Paket</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="min-h-screen flex items-center justify-center px-6">
 
-    <section class="max-w-4xl mx-auto px-6 py-20">
-        <h2 class="text-3xl font-black text-center mb-12">Apa Kata Member Kami?</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500"><p class="text-sm text-gray-300 mb-4 italic">"Screener-nya gokil, sangat membantu deteksi akumulasi bandar!"</p><div class="font-bold text-emerald-400 text-sm">— Budi, Trader</div></div>
-            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500"><p class="text-sm text-gray-300 mb-4 italic">"Profit 30% bulan pertama. Gak nyangka semudah itu."</p><div class="font-bold text-emerald-400 text-sm">— Sarah, Investor</div></div>
-            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500"><p class="text-sm text-gray-300 mb-4 italic">"Konsultasi 1-on-1 nya sangat berharga buat pemula seperti saya."</p><div class="font-bold text-emerald-400 text-sm">— Andi, Karyawan</div></div>
-            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500"><p class="text-sm text-gray-300 mb-4 italic">"Data fundamentalnya lengkap, gak perlu capek analisa satu-satu."</p><div class="font-bold text-emerald-400 text-sm">— Rina, Trader</div></div>
-            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500"><p class="text-sm text-gray-300 mb-4 italic">"Langganan tahunan paling worth it. Support 24/7 mantap."</p><div class="font-bold text-emerald-400 text-sm">— Dimas, Investor</div></div>
-        </div>
-    </section>
+<div class="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
 
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-        new TradingView.widget({ "container_id": "tv_chart", "symbol": "IDX:BBCA", "theme": "dark", "autosize": true, "allow_symbol_change": true, "details": true });
-        new TradingView.widget({ "container_id": "tv_market", "width": "100%", "height": "100%", "symbolsGroups": [{"name": "Market", "symbols": [{"name": "IDX:COMPOSITE"}, {"name": "IDX:BBCA"}, {"name": "IDX:BBRI"}]}], "colorTheme": "dark", "isTransparent": true });
-        
-        function orderViaWhatsApp(p, h) {
-            const pesan = `Halo Admin SAHAMPRO,\n\nSaya ingin berlangganan Paket Premium.\n\n*Detail Order*:\n• Paket: ${p}\n• Harga: ${h}\n\nMohon petunjuk transfer pembayarannya.`;
-            window.open(`https://api.whatsapp.com/send?phone=6287832727925&text=${encodeURIComponent(pesan)}`, '_blank');
-        }
-    </script>
+<div>
+
+<h1 class="text-6xl lg:text-8xl font-black leading-tight">
+
+Unlock
+<span class="gold">
+Smart Money
+</span>
+
+</h1>
+
+<p class="text-white/60 mt-8 text-xl">
+Being Rich Is Just A Numbers Game
+</p>
+
+<div class="flex gap-4 mt-10 flex-wrap">
+
+<button
+onclick="openPayment()"
+class="bg-yellow-400 text-black px-8 py-5 rounded-2xl font-black"
+>
+
+UNLOCK VIP
+
+</button>
+
+<button
+onclick="loginVip()"
+class="glass px-8 py-5 rounded-2xl"
+>
+
+LOGIN VIP
+
+</button>
+
+</div>
+
+</div>
+
+<div class="glass rounded-[40px] p-8">
+
+<h2 class="text-3xl font-black gold">
+VIP PACKAGE
+</h2>
+
+<div class="space-y-5 mt-10">
+
+<div class="glass rounded-2xl p-5">
+
+<div class="flex justify-between">
+
+<h3 class="font-bold">
+STARTER
+</h3>
+
+<h3 class="gold font-black">
+30K
+</h3>
+
+</div>
+
+<p class="text-white/50 mt-3">
+Buy Sell Signal + Watchlist
+</p>
+
+</div>
+
+<div class="glass rounded-2xl p-5 border border-yellow-400">
+
+<div class="flex justify-between">
+
+<h3 class="font-bold">
+VIP
+</h3>
+
+<h3 class="gold font-black">
+100K
+</h3>
+
+</div>
+
+<p class="text-white/50 mt-3">
+AI Scanner + Smart Money
+</p>
+
+</div>
+
+<div class="glass rounded-2xl p-5">
+
+<div class="flex justify-between">
+
+<h3 class="font-bold">
+SULTAN
+</h3>
+
+<h3 class="gold font-black">
+150K
+</h3>
+
+</div>
+
+<p class="text-white/50 mt-3">
+Full Institutional Access
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- POPUP QRIS -->
+
+<div
+id="paymentPopup"
+style="
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.85);
+z-index:999;
+justify-content:center;
+align-items:center;
+padding:20px;
+"
+>
+
+<div class="glass rounded-[40px] p-8 max-w-md w-full text-center">
+
+<h2 class="text-4xl font-black gold">
+SCAN QRIS
+</h2>
+
+<img
+src="qris.jpg"
+class="w-full rounded-3xl mt-8"
+/>
+
+<a
+href="https://wa.me/6287832727925"
+class="block bg-yellow-400 text-black py-5 rounded-2xl font-black mt-8"
+>
+
+SUDAH BAYAR
+
+</a>
+
+<button
+onclick="closePayment()"
+class="mt-5 text-white/50"
+>
+
+TUTUP
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openPayment(){
+
+document.getElementById("paymentPopup").style.display="flex";
+
+}
+
+function closePayment(){
+
+document.getElementById("paymentPopup").style.display="none";
+
+}
+
+function loginVip(){
+
+const pass = prompt("Masukkan Password VIP");
+
+if(pass === "SAHAMPROVIP"){
+
+window.location.href="vip.html";
+
+}else{
+
+alert("Password Salah");
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
