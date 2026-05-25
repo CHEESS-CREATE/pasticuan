@@ -1,0 +1,107 @@
+<!-- ========================================= -->
+<!-- FILE: portfolio.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#050505;
+color:white;
+font-family:sans-serif;
+padding:20px;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+}
+
+.gold{
+color:#f5c542;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="text-5xl font-black gold">
+PORTFOLIO TRACKER
+</h1>
+
+<p class="text-white/50 mt-3">
+Realtime Profit & Loss
+</p>
+
+<div class="grid md:grid-cols-3 gap-5 mt-10">
+
+<div class="glass rounded-3xl p-6">
+<p class="text-white/40">Total Asset</p>
+<h2 class="text-5xl font-black gold mt-4">
+245JT
+</h2>
+</div>
+
+<div class="glass rounded-3xl p-6">
+<p class="text-white/40">Daily PNL</p>
+<h2 class="text-5xl font-black text-green-400 mt-4">
++12.4%
+</h2>
+</div>
+
+<div class="glass rounded-3xl p-6">
+<p class="text-white/40">Growth</p>
+<h2 class="text-5xl font-black text-green-400 mt-4">
++31%
+</h2>
+</div>
+
+</div>
+
+<div class="glass rounded-[40px] p-8 mt-10">
+
+<h2 class="text-3xl font-black gold">
+PORTFOLIO HOLDINGS
+</h2>
+
+<div class="space-y-5 mt-8">
+
+<div class="glass rounded-2xl p-5 flex justify-between">
+<div>
+<h3 class="font-bold">BBCA</h3>
+<p class="text-white/40">120 Lots</p>
+</div>
+<h3 class="text-green-400 font-black">
++8.2%
+</h3>
+</div>
+
+<div class="glass rounded-2xl p-5 flex justify-between">
+<div>
+<h3 class="font-bold">TLKM</h3>
+<p class="text-white/40">90 Lots</p>
+</div>
+<h3 class="text-red-400 font-black">
+-2.1%
+</h3>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
